@@ -188,6 +188,8 @@ footer
   a:focus
     background: $secondary-blue !important
 
+// PAYMENT!!!
+
 .payment
   .planes-card
     transition: .01s
@@ -195,9 +197,8 @@ footer
     &:hover
       border: solid 4px $primary-blue
 
-
 .steps
-  margin-top: 4em
+  // margin-top: 4em
   border-top: 1px solid lightgray
   +for-ipad
     border: none
@@ -217,6 +218,9 @@ footer
       &.active
         background-color: $secondary-blue
         color: white
+      +for-ipad
+        height: 30px
+        width: 30px
   .container
     z-index: 2
     margin-top: -16px
@@ -224,6 +228,11 @@ footer
       display: flex
       flex-direction: column
       align-items: center
+
+#step1
+  img
+    +for-ipad
+      max-height: 90px
       
 #planes
   label
@@ -248,12 +257,17 @@ footer
     width: 100%
     height: 8px
     border-radius: .15rem .15rem 0 0
-  &:hover, &:active
+  &:hover
     &::before
       width: 102%
       left: -1px
       right: -1px
-      
+
+.card-input-element:checked + .product-card
+  &::before
+    width: 102%
+    left: -1px
+    right: -1px
         
 
 #step-bolsas
@@ -283,7 +297,7 @@ select#palabras
   display: inline-block
   position: relative
   font-size: 16px
-  color: white
+  color: $primary-blue
   width: 220px
   height: 40px
 
@@ -294,28 +308,30 @@ select#palabras
   right: 0
   bottom: 0
   left: 0
-  background-color: $primary-blue
+  background-color: white
   padding: 8px 15px
   transition: .3s
-  border-radius: 3px
+  // border-radius: 3px
+  border: solid 1px $primary-blue
+
   &:after 
     content: ''
     width: 0
     height: 0
     border: 7px solid transparent
-    border-color: white transparent transparent transparent
+    border-color: $primary-blue transparent transparent transparent
     position: absolute
     top: 16px
     right: 10px
   
   &:hover 
-    background-color: darken($primary-blue, 2)
+    background-color: darken(white, 0)
   
   &:active, &.active 
-    background-color: darken($primary-blue, 5)
+    background-color: darken(white, 0)
     &:after 
       top: 9px
-      border-color: transparent transparent white transparent
+      border-color: transparent transparent $primary-blue transparent
 
 .select-options 
   display: none
@@ -327,7 +343,9 @@ select#palabras
   margin: 0
   padding: 0
   list-style: none
-  background-color: darken($primary-blue, 5)
+  background-color: darken(white, 5)
+  border: 1px solid $primary-blue
+
   li 
     margin: 0
     padding: 12px 0
@@ -335,12 +353,25 @@ select#palabras
     border-top: 1px solid darken($primary-blue, 10)
     transition: .2s
     &:hover 
-      color: $primary-blue
-      background: white
+      color: white
+      background: $primary-blue
       border-right: 1px solid $primary-blue
       border-left: 1px solid $primary-blue
       border-bottom: 1px solid $primary-blue
 
-    
     &[rel="hide"] 
       display: none
+
+.btn-palabras
+  color: $primary-blue
+  border-radius: 2px
+  border: solid 2px $primary-blue
+  padding: .5em 1em  
+  cursor: pointer
+  transition: .2s
+  &:hover
+    background: $primary-blue
+    color: white
+.card-input-element:checked + .btn-palabras
+  background: $primary-blue
+  color: white

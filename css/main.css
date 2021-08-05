@@ -416,7 +416,6 @@ footer a {
 }
 
 .steps {
-  margin-top: 4em;
   border-top: 1px solid lightgray;
 }
 
@@ -452,6 +451,13 @@ footer a {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .steps .step-option span {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 .steps .container {
   z-index: 2;
   margin-top: -16px;
@@ -468,6 +474,12 @@ footer a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 768px) {
+  #step1 img {
+    max-height: 90px;
+  }
 }
 
 #planes label {
@@ -500,7 +512,13 @@ footer a {
   border-radius: .15rem .15rem 0 0;
 }
 
-.product-card:hover::before, .product-card:active::before {
+.product-card:hover::before {
+  width: 102%;
+  left: -1px;
+  right: -1px;
+}
+
+.card-input-element:checked + .product-card::before {
   width: 102%;
   left: -1px;
   right: -1px;
@@ -540,7 +558,7 @@ select#palabras {
   display: inline-block;
   position: relative;
   font-size: 16px;
-  color: white;
+  color: #688fca;
   width: 220px;
   height: 40px;
 }
@@ -551,11 +569,11 @@ select#palabras {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #688fca;
+  background-color: white;
   padding: 8px 15px;
   -webkit-transition: .3s;
   transition: .3s;
-  border-radius: 3px;
+  border: solid 1px #688fca;
 }
 
 .select-styled:after {
@@ -563,23 +581,23 @@ select#palabras {
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-color: white transparent transparent transparent;
+  border-color: #688fca transparent transparent transparent;
   position: absolute;
   top: 16px;
   right: 10px;
 }
 
 .select-styled:hover {
-  background-color: #6089c7;
+  background-color: white;
 }
 
 .select-styled:active, .select-styled.active {
-  background-color: #5581c3;
+  background-color: white;
 }
 
 .select-styled:active:after, .select-styled.active:after {
   top: 9px;
-  border-color: transparent transparent white transparent;
+  border-color: transparent transparent #688fca transparent;
 }
 
 .select-options {
@@ -592,7 +610,8 @@ select#palabras {
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: #5581c3;
+  background-color: #f2f2f2;
+  border: 1px solid #688fca;
 }
 
 .select-options li {
@@ -605,8 +624,8 @@ select#palabras {
 }
 
 .select-options li:hover {
-  color: #688fca;
-  background: white;
+  color: white;
+  background: #688fca;
   border-right: 1px solid #688fca;
   border-left: 1px solid #688fca;
   border-bottom: 1px solid #688fca;
@@ -614,5 +633,25 @@ select#palabras {
 
 .select-options li[rel="hide"] {
   display: none;
+}
+
+.btn-palabras {
+  color: #688fca;
+  border-radius: 2px;
+  border: solid 2px #688fca;
+  padding: .5em 1em;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn-palabras:hover {
+  background: #688fca;
+  color: white;
+}
+
+.card-input-element:checked + .btn-palabras {
+  background: #688fca;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
