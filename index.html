@@ -44,33 +44,31 @@
 
     <form action="">
 
-      <div class="container pt-5 pb-2 planes" id="planes">
+      <div class="container  pb-2 planes" id="planes">
         <div class="col-lg-8 offset-lg-2">
 
           <!-- PASO 1 -->
-          <div id="step1" class="">
+          <div id="step1" class="pt-5">
             <fieldset>
               <div class="row justify-content-center">
                 <div class="col-md-4 my-2 my-md-0">
                   <label id="check-bolsas">
-                    <input id="bolsas-check" type="radio" name="product" class="card-input-element" />
+                    <input id="bolsas-check" type="radio" name="product" class="card-input-element" value="bolsas" />
                     <div class="mx-2 text-center bg-gray-2 planes-card product-card pb-1">
                       <h5 class="pt-4 pb-2 m-0">Bolsas de palabras</h5>
                       <div class="px-5 py-2">
-                        <img class="img-fluid" src="./img/bolsa.png" alt="">
-                        <img class="img-fluid" src="./img/bolsa-hover.png" alt="">
+                        <img class="img-fluid" src="./img/bolsas.png" alt="">
                       </div>
                     </div>
                   </label>
                 </div>
                 <div class="col-md-4 my-2 my-md-0">
                   <label id="check-planes">
-                    <input id="planes-check" type="radio" name="product" class="card-input-element" />
+                    <input id="planes-check" type="radio" name="product" class="card-input-element" value="planes" />
                     <div class="mx-2 text-center bg-gray-2 planes-card product-card pb-1">
                       <h5 class="pt-4 pb-2 m-0">Planes</h5>
                       <div class="px-5 py-2">
-                        <img class="img-fluid" src="./img/plan.png" alt="">
-                        <img class="img-fluid" src="./img/plan-hover.png" alt="">
+                        <img class="img-fluid" src="./img/planes.png" alt="">
                       </div>
                     </div>
                   </label>
@@ -81,24 +79,36 @@
 
 
             <div class="d-flex justify-content-end">
-              <button type="button" id="next1" class="btn bg-blue text-white">Siguiente</button>
+              <button type="button" id="next1" class="btn bg-red text-white">Siguiente</button>
             </div>
           </div>
 
           <!-- PASO 2 -->
           <div id="step-planes" class="d-none">
+
+            <div class="d-flex flex-column align-items-center">
+              <label class="text-center my-2" for="palabras">Cantidad de palabras</label>
+              <select name="palabras" class="custom-select " id="palabras">
+                <option value="10000">10.000</option>
+                <option value="20000">20.000</option>
+                <option value="50000">50.000</option>
+                <option value="100000">100.000</option>
+                <option value="200000">200.000</option>
+              </select>
+            </div>
+
             <fieldset>
               <div class="row mt-3 mb-5">
 
                 <div class="col-md-4 my-2 my-md-0">
                   <label>
-                    <input type="radio" name="product" class="card-input-element" />
+                    <input id="plan-3" type="radio" name="product" value="plan-3-meses" class="card-input-element" />
                     <div class="mx-2 text-center bg-gray-2 planes-card pb-1">
                       <h5 class="pt-4 pb-2 m-0">Plan</h5>
                       <h4 class="mb-4"><span class="text-bold ">3</span><br> Meses</h4>
                       <div class="prices ">
                         <h5><span class=" text-bold">$11.490</span>/mes</h5>
-                        <p>10.000 Palabras</p>
+                        <p><span id="palabras-3">10.000</span> Palabras</p>
                       </div>
                     </div>
                   </label>
@@ -107,7 +117,7 @@
 
                 <div class="col-md-4 my-2 my-md-0">
                   <label>
-                    <input type="radio" name="product" class="card-input-element" />
+                    <input id="plan-6" type="radio" name="product" value="plan-6-meses" class="card-input-element" />
                     <div class="mx-2 text-center bg-gray-2 planes-card pb-1 position-relative">
                       <div class="price-label ps-2">
                         <p class="m-0 p-0 text-bold">-20%</p>
@@ -117,7 +127,7 @@
                       <div class="prices">
                         <h5 class="mb-0"><span class=" text-bold">$9.190</span>/mes</h5>
                         <p class="text-min p-0 m-0">Normal <span class="line-through">$11.490</span></p>
-                        <p class="mt-2">10.000 Palabras</p>
+                        <p class="mt-2"><span id="palabras-6">10.000</span> Palabras</p>
                       </div>
                     </div>
                   </label>
@@ -125,7 +135,7 @@
 
                 <div class="col-md-4 my-2 my-md-0">
                   <label>
-                    <input type="radio" name="product" class="card-input-element" />
+                    <input id="plan-12" type="radio" name="product" value="plan-12-meses" class="card-input-element" />
                     <div class="mx-2 text-center bg-gray-2 planes-card pb-1 position-relative">
                       <div class="price-label ps-2">
                         <p class="m-0 p-0 text-bold">-30%</p>
@@ -135,7 +145,7 @@
                       <div class="prices">
                         <h5 class="mb-0"><span class=" text-bold">$7.990</span>/mes</h5>
                         <p class="text-min p-0 m-0">Normal <span class="line-through">$11.490</span></p>
-                        <p class="mt-2">10.000 Palabras</p>
+                        <p class="mt-2"><span id="palabras-12">10.000</span> Palabras</p>
                       </div>
                     </div>
                   </label>
@@ -144,23 +154,43 @@
             </fieldset>
 
             <div class="d-flex justify-content-between">
-              <button type="button" id="back2" class="btn bg-blue text-white">Atrás</button>
-              <button type="button" id="next2" class="btn bg-blue text-white">Siguiente</button>
+              <button type="button" id="back2" class="btn bg-red text-white">Atrás</button>
+              <button type="button" id="next2" class="btn bg-red text-white" disabled>Siguiente</button>
             </div>
           </div>
 
           <!-- PASO 2-1 -->
-          <div id="step-bolsas" class="d-none">
+          <div id="step-bolsas" class="d-none pt-5">
             <fieldset>
-              <div class="row mt-3 mb-2">
+              <div class="row mt-3 mb-2 justify-content-center">
 
-                <div class="col-md-4 my-2 my-md-0">
+                <div class="col-md-4 my-2 ">
                   <label>
-                    <input type="radio" name="product" class="card-input-element" />
-                    <div class="mx-2 text-center bg-gray-2 planes-card pb-1">
-                      <h5 class="pt-4 pb-2 m-0">Bolsa 1</h5>
-                      <h4 class="mb-4 mt-5">$24.990</h4>
-                      <div class="prices">
+                    <input id="bolsa-1" type="radio" name="product" class="card-input-element" value="bolsa-1" />
+                    <div class="mx-2 text-center bg-gray-2 planes-card pb-1 position-relative">
+                      <!-- <div class="price-label ps-2">
+                        <p class="m-0 p-0 text-bold">-7%</p>
+                      </div> -->
+                      <h5 class="pt-3 pb-2 m-0">Bolsa 1</h5>
+                      <h4 class="mb-3 mt-2">$13.990</h4>
+                      <div class="prices prices-bolsas">
+                        <h5>10.000 palabras</h5>
+                        <p>(10 hojas aprox.)</p>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="col-md-4 my-2 ">
+                  <label>
+                    <input id="bolsa-2" type="radio" name="product" class="card-input-element" value="bolsa-2" />
+                    <div class="mx-2 text-center bg-gray-2 planes-card pb-1 position-relative">
+                      <!-- <div class="price-label ps-2">
+                        <p class="m-0 p-0 text-bold">-7%</p>
+                      </div> -->
+                      <h5 class="pt-3 pb-2 m-0">Bolsa 2</h5>
+                      <h4 class="mb-3 mt-2">$24.990</h4>
+                      <div class="prices prices-bolsas">
                         <h5>20.000 palabras</h5>
                         <p>(20 hojas aprox.)</p>
                       </div>
@@ -169,16 +199,16 @@
                 </div>
 
 
-                <div class="col-md-4 my-2 my-md-0">
+                <div class="col-md-4 my-2 ">
                   <label>
-                    <input type="radio" name="product" class="card-input-element" />
+                    <input id="bolsa-3" type="radio" name="product" class="card-input-element" value="bolsa-3" />
                     <div class="mx-2 text-center bg-gray-2 planes-card pb-1 position-relative">
-                      <div class="price-label ps-2">
+                      <!-- <div class="price-label ps-2">
                         <p class="m-0 p-0 text-bold">-7%</p>
-                      </div>
-                      <h5 class="pt-4 pb-2 m-0">Bolsa 2</h5>
-                      <h4 class="mb-4 mt-5">$59.990</h4>
-                      <div class="prices">
+                      </div> -->
+                      <h5 class="pt-3 pb-2 m-0">Bolsa 3</h5>
+                      <h4 class="mb-3 mt-2">$59.990</h4>
+                      <div class="prices prices-bolsas">
                         <h5>50.000 palabras</h5>
                         <p>(45 hojas aprox.)</p>
                       </div>
@@ -186,34 +216,52 @@
                   </label>
                 </div>
 
-                <div class="col-md-4 my-2 my-md-0">
+                <div class="col-md-4 my-2 ">
                   <label>
-                    <input type="radio" name="product" class="card-input-element" />
+                    <input id="bolsa-4" type="radio" name="product" class="card-input-element" value="bolsa-4" />
                     <div class="mx-2 text-center bg-gray-2 planes-card pb-1 position-relative">
-                      <div class="price-label ps-2">
-                        <p class="m-0 p-0 text-bold">-15%</p>
-                      </div>
-                      <h5 class="pt-4 pb-2 m-0">Bolsa 3</h5>
-                      <h4 class="mb-4 mt-5">$119.990</h4>
-                      <div class="prices">
+                      <!-- <div class="price-label ps-2">
+                        <p class="m-0 p-0 text-bold">-7%</p>
+                      </div> -->
+                      <h5 class="pt-3 pb-2 m-0">Bolsa 4</h5>
+                      <h4 class="mb-3 mt-2">$119.990</h4>
+                      <div class="prices prices-bolsas">
                         <h5>125.000 palabras</h5>
                         <p>(90 hojas aprox.)</p>
                       </div>
                     </div>
                   </label>
                 </div>
+
+                <div class="col-md-4 my-2 ">
+                  <label>
+                    <input id="bolsa-5" type="radio" name="product" class="card-input-element" value="bolsa-5" />
+                    <div class="mx-2 text-center bg-gray-2 planes-card pb-1 position-relative">
+                      <!-- <div class="price-label ps-2">
+                        <p class="m-0 p-0 text-bold">-7%</p>
+                      </div> -->
+                      <h5 class="pt-3 pb-2 m-0">Bolsa 5</h5>
+                      <h4 class="mb-3 mt-2">$354.990</h4>
+                      <div class="prices prices-bolsas">
+                        <h5>400.000 palabras</h5>
+                        <p>(360 hojas aprox.)</p>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
               </div>
             </fieldset>
             <p>* Todos los precios incluyen IVA.</p>
 
             <div class="d-flex justify-content-between">
-              <button type="button" id="back2-1" class="btn bg-blue text-white">Atrás</button>
-              <button type="button" id="next2-1" class="btn bg-blue text-white">Siguiente</button>
+              <button type="button" id="back2-1" class="btn bg-red text-white">Atrás</button>
+              <button type="button" id="next2-1" class="btn bg-red text-white" disabled>Siguiente</button>
             </div>
           </div>
 
           <!-- PASO 3 -->
-          <div id="step3" class="d-none">
+          <div id="step3" class="d-none pt-5">
             <div class="row mt-3 mb-5">
               <div class="col-md-6 my-2 form-floating">
                 <input type="email" class="form-control" id="name" placeholder="name" value="">
@@ -238,8 +286,8 @@
 
             </div>
             <div class="d-flex justify-content-between">
-              <button type="button" id="back3" class="btn bg-blue text-white">Atrás</button>
-              <button type="button" id="pagar" class="btn bg-blue text-white">Pagar</button>
+              <button type="button" id="back3" class="btn bg-red text-white">Atrás</button>
+              <button type="button" id="pagar" class="btn bg-red text-white">Pagar</button>
             </div>
           </div>
 
@@ -253,92 +301,171 @@
     crossorigin="anonymous"></script>
   <script>
 
+
+    $("#plan-3, #plan-6, #plan-12").on("click", function () {
+      if ($(this).is(":checked")) {
+        // alert("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
+        $("#next2").prop("disabled", false);
+      } else {
+        $("#next2").prop("disabled", true);
+      }
+    });
+
+    $("#bolsa-1, #bolsa-2, #bolsa-3, #bolsa-4, #bolsa-5").on("click", function () {
+      if ($(this).is(":checked")) {
+        // alert("El checkbox con valor " + $(this).val() + " ha sido seleccionado");
+        $("#next2-1").prop("disabled", false);
+      } else {
+        $("#next2-1").prop("disabled", true);
+      }
+    });
+
     $("#next1").click(function () {
-      if ($("#planes-check").is(':checked')) {
+      if ($("#planes-check").is(":checked")) {
         $("#step1").fadeOut(500, function () {
-          $(this).addClass('d-none');
+          $(this).addClass("d-none");
         });
         $("#step-planes").fadeIn(500, function () {
-          $(this).removeClass('d-none');
+          $(this).removeClass("d-none");
         });
-        $("#step-option1 span").removeClass('active');
-        $("#step-option2 span").addClass('active');
-      } else if ($("#bolsas-check").is(':checked')) {
+        $("#step-option1 span").removeClass("active");
+        $("#step-option2 span").addClass("active");
+      } else if ($("#bolsas-check").is(":checked")) {
         $("#step1").fadeOut(500, function () {
-          $(this).addClass('d-none');
+          $(this).addClass("d-none");
         });
         $("#step-bolsas").fadeIn(500, function () {
-          $(this).removeClass('d-none');
+          $(this).removeClass("d-none");
         });
-        $("#step-option1 span").removeClass('active');
-        $("#step-option2 span").addClass('active');
+        $("#step-option1 span").removeClass("active");
+        $("#step-option2 span").addClass("active");
       }
-
     });
 
     $("#next2").click(function () {
-      $("#step-planes").fadeOut(500, function () {
-        $(this).addClass('d-none');
-      });
-      $("#step3").fadeIn(500, function () {
-        $(this).removeClass('d-none');
-      });
-      $("#step-option2 span").removeClass('active');
-      $("#step-option3 span").addClass('active');
+      if ($("#plan-3, #plan-6, #plan-12").is(":checked")) {
+        $("#step-planes").fadeOut(500, function () {
+          $(this).addClass("d-none");
+        });
+        $("#step3").fadeIn(500, function () {
+          $(this).removeClass("d-none");
+        });
+        $("#step-option2 span").removeClass("active");
+        $("#step-option3 span").addClass("active");
+        $("#step-planes").addClass("step-planes")
+      }
     });
+
     $("#next2-1").click(function () {
-      $("#step-bolsas").fadeOut(500, function () {
-        $(this).addClass('d-none');
-      });
-      $("#step3").fadeIn(500, function () {
-        $(this).removeClass('d-none');
-      });
-      $("#step-option2 span").removeClass('active');
-      $("#step-option3 span").addClass('active');
+      if ($("#bolsa-1, #bolsa-2, #bolsa-3, #bolsa-4, #bolsa-5").is(":checked")) {
+        $("#step-bolsas").fadeOut(500, function () {
+          $(this).addClass("d-none");
+        });
+        $("#step3").fadeIn(500, function () {
+          $(this).removeClass("d-none");
+        });
+        $("#step-option2 span").removeClass("active");
+        $("#step-option3 span").addClass("active");
+        $("#step-bolsas").addClass("step-bolsas")
+      }
     });
     $("#back2").click(function () {
       $("#step1").fadeIn(500, function () {
-        $(this).removeClass('d-none');
+        $(this).removeClass("d-none");
       });
       $("#step-planes").fadeOut(500, function () {
-        $(this).addClass('d-none');
+        $(this).addClass("d-none");
       });
-      $("#step-option2 span").removeClass('active');
-      $("#step-option1 span").addClass('active');
+      $("#step-option2 span").removeClass("active");
+      $("#step-option1 span").addClass("active");
     });
     $("#back2-1").click(function () {
       $("#step1").fadeIn(500, function () {
-        $(this).removeClass('d-none');
+        $(this).removeClass("d-none");
       });
       $("#step-bolsas").fadeOut(500, function () {
-        $(this).addClass('d-none');
+        $(this).addClass("d-none");
       });
-      $("#step-option2 span").removeClass('active');
-      $("#step-option1 span").addClass('active');
+      $("#step-option2 span").removeClass("active");
+      $("#step-option1 span").addClass("active");
     });
 
     $("#back3").click(function () {
-      if ($("#planes-check").is(':checked')) {
-        $("#step-planes").fadeIn(500, function () {
-          $(this).removeClass('d-none');
-        });
-        $("#step3").fadeOut(500, function () {
-          $(this).addClass('d-none');
-        });
-      } else if ($("#bolsas-check").is(':checked')) {
+      if ($("#step-bolsas").hasClass("step-bolsas")) {
         $("#step-bolsas").fadeIn(500, function () {
-          $(this).removeClass('d-none');
+          $(this).removeClass("d-none");
         });
         $("#step3").fadeOut(500, function () {
-          $(this).addClass('d-none');
+          $(this).addClass("d-none");
         });
+        $("#step-bolsas").removeClass("step-bolsas")
+      } else if ($("#step-planes").hasClass("step-planes")) {
+        $("#step-planes").fadeIn(500, function () {
+          $(this).removeClass("d-none");
+        });
+        $("#step3").fadeOut(500, function () {
+          $(this).addClass("d-none");
+        });
+        $("#step-planes").removeClass("step-planes")
       }
-      $("#step-option3 span").removeClass('active');
-      $("#step-option2 span").addClass('active');
+      $("#step-option3 span").removeClass("active");
+      $("#step-option2 span").addClass("active");
     });
 
     $("#pagar").click(function () {
-      alert('A PAGAR!')
+      alert("A PAGAR!")
     })
+
+    // SELECT
+    $('#palabras').each(function () {
+      var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+      $this.addClass('select-hidden');
+      $this.wrap('<div class="select"></div>');
+      $this.after('<div class="select-styled"></div>');
+
+      var $styledSelect = $this.next('div.select-styled');
+      $styledSelect.text($this.children('option').eq(0).text());
+
+      var $list = $('<ul />', {
+        'class': 'select-options'
+      }).insertAfter($styledSelect);
+
+      for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+          text: $this.children('option').eq(i).text(),
+          rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+      }
+
+      var $listItems = $list.children('li');
+
+      $styledSelect.click(function (e) {
+        e.stopPropagation();
+        $('div.select-styled.active').not(this).each(function () {
+          $(this).removeClass('active').next('ul.select-options').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options').toggle();
+      });
+
+      $listItems.click(function (e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        console.log($this.val());
+
+        var cantidad = $this.val()
+        $("#palabras-3").text(cantidad)
+        $("#palabras-6").text(cantidad)
+        $("#palabras-12").text(cantidad)
+      });
+
+      $(document).click(function () {
+        $styledSelect.removeClass('active');
+        $list.hide();
+      });
+
+    });
   </script>
 </body>
