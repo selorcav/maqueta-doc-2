@@ -555,6 +555,7 @@ select#palabras {
   padding: 8px 15px;
   -webkit-transition: .3s;
   transition: .3s;
+  border-radius: 3px;
 }
 
 .select-styled:after {
