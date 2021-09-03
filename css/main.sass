@@ -1,5 +1,5 @@
 // mixin responsive
-@import 'mixin_rd', 'variables', 'helper_classes'
+@import 'mixin_rd', 'variables', 'helper_classes', 'bootstrap5_classes'
 
 body
   color: $color-text
@@ -194,6 +194,7 @@ footer
   .planes-card
     transition: .01s
     cursor: pointer
+    border: solid 4px transparent
     &:hover
       border: solid 4px $primary-blue
 
@@ -259,13 +260,13 @@ footer
     border-radius: .15rem .15rem 0 0
   &:hover
     &::before
-      width: 102%
+      width: 101%
       left: -1px
       right: -1px
 
 .card-input-element:checked + .product-card
   &::before
-    width: 102%
+    width: 101%
     left: -1px
     right: -1px
         
@@ -363,6 +364,7 @@ select#palabras
       display: none
 
 .btn-palabras
+  font-weight: 300
   color: $primary-blue
   border-radius: 2px
   border: solid 2px $primary-blue
